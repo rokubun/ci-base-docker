@@ -1,0 +1,12 @@
+image: rokubun/ci-base
+services:
+  - docker:18.09.2-dind
+
+before_script:
+  - docker info
+  - docker-compose --version
+
+build image:
+  stage: build
+  script:
+    - docker-compose build
